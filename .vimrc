@@ -1,0 +1,11 @@
+syntax on
+set showcmd
+set hlsearch
+set ignorecase
+set smartcase
+set ruler
+set confirm
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
