@@ -36,8 +36,14 @@ parse_git_branch() {
     fi
   fi
 }
-PROMPT='${BOLD}%~${RESET} $(parse_git_branch)$ '
+conda_env() {
+  [[ -n "$CONDA_DEFAULT_ENV" ]] && echo "${BLUE}[$CONDA_DEFAULT_ENV]${RESET}"
+}
 
+PROMPT='${BOLD}%~${RESET} $(conda_env) $(parse_git_branch)$ '
+
+
+export CONDA_CHANGEPS1=no # don't let conda change prompt
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/ddetone/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
