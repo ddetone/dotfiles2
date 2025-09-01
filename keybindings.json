@@ -1,0 +1,11 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "alt+t l",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "alt+t h",
+    "command": "workbench.action.focusActiveEditorGroup"
+  }
+]
