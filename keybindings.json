@@ -7,5 +7,12 @@
   {
     "key": "alt+t alt+h",
     "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+      "key": "ctrl+p",
+      "command": "editor.action.insertSnippet",
+      "args": {
+          "name": "Insert pdb" // This should match the name in your snippet file
+      }
   }
 ]

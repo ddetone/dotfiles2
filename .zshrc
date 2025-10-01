@@ -15,6 +15,8 @@ alias dus='du -hs * | sort -h'
 alias tre='tree -A -C -L 2'
 alias ll='ls -FGlAhp'
 alias ls='ls -FGhp'
+alias pip=pip3 # make pip and pip3 the same
+
 
 # Prompt
 setopt PROMPT_SUBST
@@ -41,6 +43,10 @@ conda_env() {
 }
 
 PROMPT='${BOLD}%~${RESET} $(conda_env) $(parse_git_branch)$ '
+
+
+# Pythonpath
+export PYTHONPATH="$HOME/code/fish"
 
 
 export CONDA_CHANGEPS1=no # don't let conda change prompt
