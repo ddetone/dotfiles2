@@ -17,6 +17,16 @@ alias ll='ls -FGlAhp'
 alias ls='ls -FGhp'
 alias pip=pip3 # make pip and pip3 the same
 
+# Share history across tmux panes.
+setopt inc_append_history
+setopt SHARE_HISTORY       # Share command history between all sessions
+setopt INC_APPEND_HISTORY  # Add commands to history as soon as they’re entered
+setopt HIST_IGNORE_DUPS    # Don't record duplicate commands
+setopt HIST_FIND_NO_DUPS   # Don't show duplicates when searching
+# ✅ Make history instantly updated across sessions
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
 
 # Prompt
 setopt PROMPT_SUBST
@@ -45,8 +55,19 @@ conda_env() {
 PROMPT='${BOLD}%~${RESET} $(conda_env) $(parse_git_branch)$ '
 
 
-# Pythonpath
+# Paths
 export PYTHONPATH="$HOME/code/fish"
+export PATH=$PATH:"/opt/homebrew/bin"
+
+# Fb related
+alias fbf="cd $HOME/fbsource/fbcode/surreal/fov3d"
+alias fbb="cd $HOME/fbsource/arvr/projects/surreal/boxy"
+export PYTHONPATH=$PYTHONPATH:$HOME/fbsource/fbcode
+#b is for buck
+autoload -Uz compinit
+compinit
+source $HOME/fbsource/arvr/scripts/twhelan/b/b-completion.bash
+export PATH="$HOME/fbsource/arvr/scripts/twhelan/b/:$PATH"
 
 
 export CONDA_CHANGEPS1=no # don't let conda change prompt
