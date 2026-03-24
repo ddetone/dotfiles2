@@ -1,6 +1,7 @@
 
 # fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--bind 'ctrl-k:kill-line'"
 # My aliases.
 alias ez="vi $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
@@ -80,6 +81,7 @@ export FED="100.118.83.38"
 alias fbf="cd $HOME/fbsource/fbcode/surreal/fov3d"
 alias fbb="cd $HOME/fbsource/arvr/projects/surreal/boxy"
 alias fbe="cd $HOME/fbsource/arvr/projects/surreal/experiments/efm"
+alias fcb="cd $HOME/code/boxer"
 export PYTHONPATH=$PYTHONPATH:$HOME/fbsource/fbcode
 export PYTHONPATH=$PYTHONPATH:$HOME/fbsource
 export PYTHONPATH=$PYTHONPATH:$HOME/code/ca1m

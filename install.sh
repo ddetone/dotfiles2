@@ -17,11 +17,13 @@ if [[ "$(uname)" == "Darwin" ]]; then
   VSCODE_DIR="$HOME/Library/Application Support/Code/User"
   if [[ -d "$VSCODE_DIR" ]]; then
     ln -sf "$DOTFILES_DIR/keybindings.json" "$VSCODE_DIR/keybindings.json"
+    ln -sf "$DOTFILES_DIR/vscode-settings.json" "$VSCODE_DIR/settings.json"
   fi
 elif [[ "$(uname)" == "Linux" ]]; then
   VSCODE_DIR="$HOME/.config/Code/User"
   if [[ -d "$VSCODE_DIR" ]]; then
     ln -sf "$DOTFILES_DIR/keybindings.json" "$VSCODE_DIR/keybindings.json"
+    ln -sf "$DOTFILES_DIR/vscode-settings.json" "$VSCODE_DIR/settings.json"
   fi
 fi
 
