@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.local/bin/claude-notify.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

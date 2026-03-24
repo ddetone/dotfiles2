@@ -1,4 +1,7 @@
 {
-  "claude-code.notificationSound": "enabled",
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
+  "terminal.integrated.enableVisualBell": true
 }

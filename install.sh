@@ -27,4 +27,24 @@ elif [[ "$(uname)" == "Linux" ]]; then
   fi
 fi
 
+# Claude Code notification sound
+mkdir -p "$HOME/.local/bin"
+ln -sf "$DOTFILES_DIR/claude-notify.sh" "$HOME/.local/bin/claude-notify.sh"
+
+# Merge claude hooks into ~/.claude/settings.json
+CLAUDE_SETTINGS="$HOME/.claude/settings.json"
+if command -v jq &>/dev/null; then
+  mkdir -p "$HOME/.claude"
+  if [[ -f "$CLAUDE_SETTINGS" ]]; then
+    jq -s '.[0] * .[1]' "$CLAUDE_SETTINGS" "$DOTFILES_DIR/claude-settings.json" > "$CLAUDE_SETTINGS.tmp" \
+      && mv "$CLAUDE_SETTINGS.tmp" "$CLAUDE_SETTINGS"
+    echo "==> Merged claude hooks into $CLAUDE_SETTINGS"
+  else
+    cp "$DOTFILES_DIR/claude-settings.json" "$CLAUDE_SETTINGS"
+    echo "==> Created $CLAUDE_SETTINGS"
+  fi
+else
+  echo "==> WARN: jq not found, skipping claude settings merge"
+fi
+
 echo "==> Done!"
