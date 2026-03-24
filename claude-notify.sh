@@ -1,9 +1,10 @@
 #!/bin/bash
-# Play a notification sound (macOS or Linux with audio)
+# Notification when Claude finishes
 if [[ "$(uname)" == "Darwin" ]]; then
+  # Local Mac: play sound directly
   afplay /System/Library/Sounds/Glass.aiff &
-elif command -v paplay &>/dev/null; then
-  paplay /usr/share/sounds/freedesktop/stereo/complete.oga &
-elif command -v aplay &>/dev/null; then
-  aplay /usr/share/sounds/sound-icons/glass-water-1.wav &
+else
+  # Remote (e.g. SSH via VS Code): use terminal bell
+  # VS Code forwards this to the local machine as a notification
+  printf '\a'
 fi
