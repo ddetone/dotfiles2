@@ -95,6 +95,9 @@ export PATH="$HOME/fbsource/arvr/scripts/twhelan/b/:$PATH"
 
 # Option+Backspace: delete previous word
 bindkey '^[^?' backward-kill-word
+# Ctrl+A: beginning of line, Ctrl+K: kill to end of line
+bindkey '^A' beginning-of-line
+bindkey '^K' kill-line
 # Option+Left/Right: move by word
 bindkey '^[[1;3D' backward-word
 bindkey '^[[1;3C' forward-word
